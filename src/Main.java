@@ -1,12 +1,13 @@
 public class Main {
     public static void main(String[] args) {
-        Person[] person = {
+        Person[] people = {
                 new Person("Alice", 26),
                 new Person("Oleg", 43),
                 new Person("David", 35),
                 new Person("John", 19)
         };
-        System.out.println(person);
+        PersonArrayHandler handler = new PersonArrayHandler(people);
+        System.out.println(handler);
 
 
     }
