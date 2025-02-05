@@ -1,3 +1,4 @@
+import java.util.*;
 public class PersonArrayHandler {
     private Person[] array;
 
@@ -8,9 +9,33 @@ public class PersonArrayHandler {
     @Override
     public String toString() {
         String result = "";
-        for (Person person : array){
-            result += person+System.lineSeparator();
+        for (Person person : array) {
+            result += person + System.lineSeparator();
         }
         return result;
+    }
+
+    public Person get(int index) {
+        if (index < 0 || index >= array.length) {
+            return null;
+        } else {
+           return array[index];
+        }
+    }
+
+
+    public int indexOdMaxAgePerson(int index) {
+        int maxIndex = Math.max(index,0) ;
+        for (int i = index; i < array.length; i++) {
+            if (array[i].getAge() > array[maxIndex].getAge()){
+                maxIndex = i;
+            }
+
+        }
+        return maxIndex>=array.length?-1:maxIndex;
+    }
+
+    public int indexOfMaxAgePerson(){
+        return indexOdMaxAgePerson(0);
     }
 }

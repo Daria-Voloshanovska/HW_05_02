@@ -1,3 +1,4 @@
+import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Person[] people = {
@@ -8,7 +9,7 @@ public class Main {
         };
         PersonArrayHandler handler = new PersonArrayHandler(people);
         System.out.println(handler);
-
+        System.out.println("Index of oldest person : " + handler.get(handler.indexOdMaxAgePerson(3)));
 
     }
 }
