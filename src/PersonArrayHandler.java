@@ -38,4 +38,33 @@ public class PersonArrayHandler {
     public int indexOfMaxAgePerson(){
         return indexOdMaxAgePerson(0);
     }
+
+    public boolean isPersonExists(Person person) {
+        for (Person p : array) {
+            if (p.equals(person)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean isPersonExists(Person[] persons) {
+        for (Person p : persons) {
+            if (!isPersonExists(p)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public List<Person> retainAll(Person[] persons) {
+        List<Person> retained = new ArrayList<>();
+        for (Person p : persons) {
+            if (isPersonExists(p)) {
+                retained.add(p);
+            }
+        }
+        return retained;
+    }
+
 }

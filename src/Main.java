@@ -11,6 +11,16 @@ public class Main {
         System.out.println(handler);
         System.out.println("Index of oldest person : " + handler.get(handler.indexOdMaxAgePerson(3)));
 
+        System.out.println("Index of oldest person from index 1: " + handler.indexOdMaxAgePerson(1));
+
+        System.out.println("Is Oleg exists: " + handler.isPersonExists(new Person("Oleg", 43)));
+
+        Person[] checkPeople = {new Person("Alice", 26), new Person("John", 19)};
+        System.out.println("Are Alice and John exist: " + handler.isPersonExists(checkPeople));
+
+        List<Person> retained = handler.retainAll(checkPeople);
+        System.out.println("Retained persons: " + retained);
+
     }
 }
 
